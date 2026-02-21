@@ -53,9 +53,8 @@ Bu ödevde iki CSV dosyası verilmiştir. Her biri için lojistik regresyon mode
 
 1. **Veriyi yükleyin** – CSV dosyasını okuyun, ilk birkaç satıra göz atın.
 2. **Öznitelikleri (X) ve hedef değişkeni (y) ayırın.**
-3. **Veriyi bölün** – Eğitim ve test setlerine ayırın.
-4. **Modeli kurun ve eğitin** – Lojistik regresyon modelini sıfırdan (numpy ile) yazarak eğitim verisiyle eğitin.
-5. **Tahmin yapın** – Test seti üzerinde tahmin yapın.
-6. **Accuracy (doğruluk) hesaplayın** – Modelin test setindeki başarı oranını yazdırın.
+3. **Modeli kurun ve eğitin** – Lojistik regresyon modelini sıfırdan (numpy ile) yazarak tüm veriyle eğitin.
+4. **Tahmin yapın** – Eğitilen modelle tahmin yapın.
+5. **Accuracy (doğruluk) hesaplayın** – Modelin başarı oranını yazdırın.
 
 > **Not:** Bu ödevde hazır kütüphane (sklearn vb.) kullanılmamalıdır. Model, numpy kullanılarak sıfırdan kodlanmalıdır.
