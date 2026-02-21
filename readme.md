@@ -16,6 +16,14 @@ $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
 
 3. Elde edilen olasılık bir eşik değeriyle (genellikle 0.5) karşılaştırılarak sınıf tahmini yapılır.
 
+### Softmax Fonksiyonu
+
+Çok sınıflı (multinomial) problemlerde sigmoid yerine **softmax** fonksiyonu kullanılır. Softmax, her sınıf için ayrı bir olasılık üretir ve bu olasılıkların toplamı 1'e eşittir:
+
+$$P(y = k) = \frac{e^{z_k}}{\sum_{j=1}^{K} e^{z_j}}$$
+
+Burada $K$ toplam sınıf sayısı, $z_k$ ise $k$. sınıf için hesaplanan doğrusal skorudur. En yüksek olasılığa sahip sınıf tahmin olarak seçilir.
+
 ### İki Türü
 
 - **Binary (İkili):** Sınıf sayısı 2'dir. Örnek: Kredi onaylandı mı? (Evet / Hayır)
