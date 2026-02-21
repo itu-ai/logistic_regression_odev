@@ -53,7 +53,9 @@ Bu ödevde iki CSV dosyası verilmiştir. Her biri için lojistik regresyon mode
 
 1. **Veriyi yükleyin** – CSV dosyasını okuyun, ilk birkaç satıra göz atın.
 2. **Öznitelikleri (X) ve hedef değişkeni (y) ayırın.**
-3. **Veriyi bölün** – Eğitim ve test setlerine ayırın (`train_test_split`).
-4. **Modeli kurun ve eğitin** – `sklearn.linear_model.LogisticRegression` kullanarak modeli eğitim verisiyle fit edin.
-5. **Tahmin yapın** – Test seti üzerinde predict edin.
+3. **Veriyi bölün** – Eğitim ve test setlerine ayırın.
+4. **Modeli kurun ve eğitin** – Lojistik regresyon modelini sıfırdan (numpy ile) yazarak eğitim verisiyle eğitin.
+5. **Tahmin yapın** – Test seti üzerinde tahmin yapın.
 6. **Accuracy (doğruluk) hesaplayın** – Modelin test setindeki başarı oranını yazdırın.
+
+> **Not:** Bu ödevde hazır kütüphane (sklearn vb.) kullanılmamalıdır. Model, numpy kullanılarak sıfırdan kodlanmalıdır.
