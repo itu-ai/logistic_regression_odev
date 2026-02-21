@@ -16,29 +16,16 @@ $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
 
 3. Elde edilen olasılık bir eşik değeriyle (genellikle 0.5) karşılaştırılarak sınıf tahmini yapılır.
 
-### Kayıp Fonksiyonu (Loss Function)
-
-Lojistik regresyonda **Binary Cross-Entropy (Log Loss)** kullanılır:
-
-$$L = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i) \right]$$
-
-Bu fonksiyon, modelin tahmin ettiği olasılıkların gerçek etiketlerden ne kadar uzak olduğunu ölçer. Eğitim sırasında bu kayıp minimize edilir.
-
 ### İki Türü
 
-| Tür | Sınıf Sayısı | Örnek |
-|-----|--------------|-------|
-| **Binary (İkili)** | 2 | Kredi onaylandı mı? (Evet / Hayır) |
-| **Multinomial (Çok Sınıflı)** | 3+ | Bölge sınıflandırma (0, 1, 2) |
-
-- **Binary** lojistik regresyonda tek bir sigmoid çıkışı yeterlidir.
-- **Multinomial** lojistik regresyonda sigmoid yerine **softmax** fonksiyonu kullanılır; bu fonksiyon her sınıf için ayrı bir olasılık üretir ve toplamları 1'e eşittir.
+- **Binary (İkili):** Sınıf sayısı 2'dir. Örnek: Kredi onaylandı mı? (Evet / Hayır)
+- **Multinomial (Çok Sınıflı):** Sınıf sayısı 3 veya daha fazladır. Örnek: Bölge sınıflandırma (0, 1, 2)
 
 ---
 
 ## Ödev Tanımı
 
-Bu ödevde iki CSV dosyası verilmiştir. Her biri için lojistik regresyon modeli kurulmalı, eğitilmeli ve değerlendirilmelidir.
+Bu ödevde iki CSV dosyası verilmiştir. Her biri için lojistik regresyon modeli kurulmalı, eğitilmeli ve sonuçlar gözlemlenmelidir.
 
 ### 1. Binary Lojistik Regresyon (`binary_logistic_regression.csv`)
 
@@ -50,7 +37,6 @@ Bu ödevde iki CSV dosyası verilmiştir. Her biri için lojistik regresyon mode
 
 - **1000 satır** veri içerir.
 - `income` ve `debt_ratio` özniteliklerini kullanarak `loan_approved` sınıfını tahmin edin.
-- Bu bir **ikili sınıflandırma** problemidir.
 
 ### 2. Multinomial Lojistik Regresyon (`multinomial_logistic_regression.csv`)
 
@@ -62,17 +48,12 @@ Bu ödevde iki CSV dosyası verilmiştir. Her biri için lojistik regresyon mode
 
 - **450 satır** veri içerir.
 - `age` ve `annual_income` özniteliklerini kullanarak `zone` sınıfını tahmin edin.
-- Bu bir **çok sınıflı sınıflandırma** problemidir (3 sınıf).
 
 ### Yapılması Gerekenler
 
-1. **Veriyi yükleyin** ve keşifsel analiz yapın (ilk satırlar, istatistikler, eksik değer kontrolü).
-2. **Veriyi bölün** – Eğitim (%80) ve test (%20) setlerine ayırın.
-3. **Modeli kurun** – `sklearn.linear_model.LogisticRegression` veya kendi implementasyonunuzu kullanın.
-4. **Modeli eğitin** – Eğitim seti üzerinde fit edin.
+1. **Veriyi yükleyin** – CSV dosyasını okuyun, ilk birkaç satıra göz atın.
+2. **Öznitelikleri (X) ve hedef değişkeni (y) ayırın.**
+3. **Veriyi bölün** – Eğitim ve test setlerine ayırın (`train_test_split`).
+4. **Modeli kurun ve eğitin** – `sklearn.linear_model.LogisticRegression` kullanarak modeli eğitim verisiyle fit edin.
 5. **Tahmin yapın** – Test seti üzerinde predict edin.
-6. **Değerlendirin** – Aşağıdaki metrikleri raporlayın:
-   - Accuracy (Doğruluk)
-   - Confusion Matrix (Karışıklık Matrisi)
-   - Classification Report (Precision, Recall, F1-Score)
-7. **Görselleştirme** (Opsiyonel) – Karar sınırını (decision boundary) çizin.
+6. **Accuracy (doğruluk) hesaplayın** – Modelin test setindeki başarı oranını yazdırın.
