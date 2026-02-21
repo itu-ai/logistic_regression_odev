@@ -66,3 +66,8 @@ Bu ödevde iki CSV dosyası verilmiştir. Her biri için lojistik regresyon mode
 5. **Accuracy (doğruluk) hesaplayın** – Modelin başarı oranını yazdırın.
 
 > **Not:** Bu ödevde hazır kütüphane (sklearn vb.) kullanılmamalıdır. Model, numpy kullanılarak sıfırdan kodlanmalıdır.
+
+### Opsiyonel Araştırma
+
+- **Gradient Descent (Gradyan İnişi):** Modelin ağırlıklarını güncellemek için kullanılan optimizasyon yöntemidir. Kayıp fonksiyonunun gradyanı hesaplanarak ağırlıklar her adımda küçük bir öğrenme oranı ($\alpha$) ile güncellenir. Araştırıp öğrenmek isteyenler için önerilir.
+- **Learning Rate (Öğrenme Oranı):** Gradient descent'te ağırlıkların her adımda ne kadar güncelleneceğini belirleyen hiperparametredir. Farklı değerlerle deneyip etkisini gözlemleyebilirsiniz.
